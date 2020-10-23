@@ -3,3 +3,5 @@ config/keys.js
 /config/keys.js
 keys.js
 keys.js/
+public/
+client/public
