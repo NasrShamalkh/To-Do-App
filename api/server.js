@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const router = require('./router');
+const path = require('path');
 
 const app = express();
 app.use(cors());
@@ -20,14 +21,12 @@ mongoose
   .then(() => console.log('Database is connected successfully'))
   .catch(err => console.log('Error in database connection', err));
 
-if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(express.static('client/public'));
+// Set static folder
+app.use(express.static('client/public'));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'client', 'public', 'index.html'));
-  });
-}
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '..', 'client', 'public', 'index.html'));
+// });
 
 // configuring our routes
 app.use('/', router);
