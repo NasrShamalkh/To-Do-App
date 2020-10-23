@@ -1,6 +1,9 @@
 {
   "name": "to-do-app",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.3.0"
+  },
   "description": "A basic to-do application using the MERN stack",
   "main": "server.js",
   "scripts": {
