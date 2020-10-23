@@ -20,8 +20,17 @@ mongoose
   .then(() => console.log('Database is connected successfully'))
   .catch(err => console.log('Error in database connection', err));
 
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/public'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
+  });
+}
+
 // configuring our routes
 app.use('/', router);
 
-const PORT = 5600;
+const PORT = process.env.PORT || 5600;
 app.listen(PORT, () => console.log(`App is listening on PORT ${PORT}`));

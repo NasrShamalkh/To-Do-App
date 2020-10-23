@@ -1,21 +1,22 @@
 {
-  "name": "react_app",
+  "name": "front_end_for_todo_app",
   "version": "1.0.0",
-  "description": "",
+  "description": "front_end_for_todo_app",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot --port 3000",
     "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "proxy": "http://localhost:5600"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.20.0",
     "css-loader": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0",
     "style-loader": "^2.0.0",
     "webpack-dev-server": "^3.11.0"
   },
@@ -27,5 +28,6 @@
     "html-webpack-plugin": "^4.5.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
-  }
+  },
+  "proxy": "http://localhost:5600"
 }

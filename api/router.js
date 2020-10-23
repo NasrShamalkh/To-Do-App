@@ -16,6 +16,7 @@ router.post('/api/todos', (req, res) => {
           res.send(newTodo);
         });
       } else {
+        console.log('Todo element already exist !');
         res.send('Todo element already exist !');
       }
     })
@@ -27,19 +28,32 @@ router.post('/api/todos', (req, res) => {
 
 // get all todos
 router.get('/api/todos', (req, res) => {
-  TodoModel.find({}, (err, data) => {
-    if (err) {
-      console.log('Error in finding all data', err);
-      res.send('Error in finding all data', err);
-    } else {
-      console.log(typeof data);
+  // TodoModel.find({}, (err, data) => {
+  //   if (err) {
+  //     console.log('Error in finding all data', err);
+  //     res.send('Error in finding all data', err);
+  //   } else {
+  //     console.log(typeof data);
+  //     if (data.length === 0) {
+  //       res.send("It seems you don't have any todos");
+  //     } else {
+  //       res.json(data);
+  //     }
+  //   }
+  // });
+  TodoModel.find({})
+    .then(data => {
       if (data.length === 0) {
-        res.send("It seems you don't have any todos");
+        res.send([]);
       } else {
-        res.json(data);
+        console.log(data);
+        res.send(data);
       }
-    }
-  });
+    })
+    .catch(err => {
+      console.log(err);
+      res.send(err);
+    });
 });
 
 //delete all todos
@@ -60,7 +74,7 @@ router.put('/api/todos/:_id', (req, res) => {
   // use findOne and update
   TodoModel.findOne({ _id }).then(data => {
     if (data) {
-      TodoModel.findOneAndUpdate({ _id }, { done: true }, err => {
+      TodoModel.findOneAndUpdate({ _id }, { done: !data.done }, err => {
         if (err) {
           console.log('Error while updating a todo status', err);
           res.send('Error while updating a todo status', err);

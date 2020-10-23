@@ -1,0 +1,198 @@
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  text-align: center;
+  background-color: #f0fff0;
+}
+
+ul {
+  list-style: none;
+  width: 600px;
+  margin: auto;
+  height: 400px;
+  overflow: auto;
+  padding-left: 0;
+  border: 3px solid #00e7f2;
+  border-radius: 8px;
+}
+
+li {
+  color: #f0fff0;
+  font-size: 27px;
+  text-align: left;
+  line-height: 2.5;
+  border: 0.5px solid #f0fff0;
+  height: 68px;
+  background-color: grey;
+  padding-left: 10px;
+  border-radius: 8px;
+}
+
+#buttonDiv {
+  display: inline;
+  float: right;
+  margin-right: 10px;
+}
+
+#restorButton {
+  display: inline;
+  float: right;
+  margin-right: 10px;
+}
+
+#saveContainer {
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+#saveContainer > input {
+  width: 560px;
+  height: 35px;
+  font-size: 20px;
+  border: none;
+  border-bottom: 2px solid black;
+  border-radius: 9px 9px 0 0;
+  padding-left: 10px;
+}
+
+#saveContainer > button {
+  width: 120px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 3px;
+  margin-left: 6px;
+}
+
+#funDiv {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.button1 {
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 3px;
+  margin: 10px;
+}
+
+h1 {
+  font-size: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 200px;
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #f0fff0;
+}
+
+.iconButton {
+  width: 50px;
+  height: 45px;
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 20px;
+    height: 100px;
+  }
+  ul {
+    width: 400px;
+    height: 300px;
+  }
+  li {
+    font-size: 18px;
+    line-height: 2.5;
+    border: 0.5px solid #f0fff0;
+    height: 47px;
+    padding-left: 7px;
+  }
+  #saveContainer {
+    margin-top: 35px;
+    margin-bottom: 25px;
+  }
+
+  #saveContainer > input {
+    width: 280px;
+    height: 27px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 2px solid black;
+  }
+  #saveContainer > button {
+    width: 100px;
+    height: 27px;
+    font-size: 18px;
+
+    margin-left: 4px;
+  }
+  .button1 {
+    width: 120px;
+    height: 30px;
+    font-size: 18px;
+    margin: 10px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 18px;
+    height: 100px;
+  }
+  ul {
+    width: 350px;
+    height: 290px;
+  }
+  li {
+    font-size: 18px;
+    line-height: 2.5;
+    border: 0.5px solid #f0fff0;
+    height: 47px;
+    padding-left: 7px;
+  }
+  #saveContainer {
+    margin-top: 25px;
+    margin-bottom: 18px;
+  }
+
+  #saveContainer > input {
+    width: 240px;
+    height: 27px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 2px solid black;
+  }
+  #saveContainer > button {
+    width: 90px;
+    height: 27px;
+    font-size: 15px;
+
+    margin-left: 4px;
+  }
+  .button1 {
+    width: 120px;
+    height: 30px;
+    font-size: 18px;
+    margin: 10px;
+  }
+}
