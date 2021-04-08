@@ -15,6 +15,6 @@ module.exports = {
 
 </code>  
 
-this requires you to create a database on Mongo Atlas. You can add any databse configration you like  
+this requires you to create a database on MongoAtlas. You can add any databse configration you like  
 
 or you can add local configration  
